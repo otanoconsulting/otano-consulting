@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Social Media & Content Services — Otano Consulting Group</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --ink: #1a1218;
+    --purple: #3d1f5e;
+    --purple-mid: #5c3182;
+    --gold: #c8a96e;
+    --cream: #faf7f2;
+    --warm-gray: #f0ece4;
+    --text-muted: #7a6e78;
+    --border: rgba(61,31,94,0.12);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 20px 48px;
+    display: flex; align-items: center; justify-content: space-between;
+    background: rgba(250,247,242,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--purple);
+    text-decoration: none;
+  }
+  .nav-links {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+  .nav-link {
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--purple);
+    text-decoration: none;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+  }
+  .nav-link:hover { opacity: 1; }
+  .nav-link.active { opacity: 1; border-bottom: 1px solid var(--gold); padding-bottom: 2px; }
+  .nav-cta {
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--purple);
+    text-decoration: none;
+    border: 1px solid var(--purple);
+    padding: 9px 22px;
+    transition: all 0.25s;
+  }
+  .nav-cta:hover { background: var(--purple); color: var(--cream); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 140px 72px 80px;
+    position: relative;
+    overflow: hidden;
+    background: var(--purple);
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -100px; right: -100px;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(200,169,110,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: var(--gold);
+  }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--cream);
+    margin-bottom: 24px;
+    max-width: 700px;
+  }
+  .hero h1 em { font-style: italic; color: var(--gold); }
+  .hero-sub {
+    font-size: 1.05rem;
+    font-weight: 300;
+    color: rgba(250,247,242,0.7);
+    max-width: 560px;
+    line-height: 1.75;
+    margin-bottom: 48px;
+  }
+  .btn-primary {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--purple);
+    padding: 16px 36px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  .btn-primary:hover { background: #d4b87a; }
+  .btn-ghost {
+    display: inline-block;
+    color: rgba(250,247,242,0.7);
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(200,169,110,0.4);
+    padding-bottom: 2px;
+    transition: all 0.2s;
+  }
+  .btn-ghost:hover { color: var(--gold); border-color: var(--gold); }
+  .hero-actions { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; }
+
+  /* ── SECTION BASE ── */
+  section { padding: 100px 72px; }
+  .section-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-label::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: var(--gold);
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 300;
+    line-height: 1.2;
+    color: var(--purple);
+    margin-bottom: 16px;
+  }
+  .section-sub {
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--text-muted);
+    max-width: 600px;
+    line-height: 1.75;
+    margin-bottom: 64px;
+  }
+
+  /* ── PACKAGES ── */
+  .packages { background: var(--cream); }
+  .packages-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: var(--border);
+  }
+  .package-card {
+    background: var(--cream);
+    padding: 48px 36px;
+    transition: all 0.3s;
+    position: relative;
+  }
+  .package-card:hover { background: white; transform: translateY(-4px); box-shadow: 0 20px 60px rgba(61,31,94,0.1); z-index: 2; }
+  .package-card.featured { background: var(--purple); }
+  .package-card.featured:hover { background: var(--purple-mid); }
+
+  .package-tag {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+    display: block;
+  }
+  .package-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--purple);
+    margin-bottom: 6px;
+    line-height: 1.2;
+  }
+  .package-card.featured .package-name { color: var(--cream); }
+  .package-price {
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+  .package-ideal {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-bottom: 24px;
+    line-height: 1.5;
+  }
+  .package-card.featured .package-ideal { color: rgba(250,247,242,0.5); }
+  .package-divider {
+    width: 32px; height: 1px;
+    background: var(--border);
+    margin-bottom: 24px;
+  }
+  .package-card.featured .package-divider { background: rgba(255,255,255,0.2); }
+  .package-includes {
+    list-style: none;
+    margin-bottom: 36px;
+  }
+  .package-includes li {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    padding: 7px 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    line-height: 1.4;
+  }
+  .package-card.featured .package-includes li {
+    color: rgba(250,247,242,0.65);
+    border-color: rgba(255,255,255,0.1);
+  }
+  .package-includes li::before { content: '—'; color: var(--gold); flex-shrink: 0; }
+  .package-btn {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 12px 24px;
+    border: 1px solid var(--purple);
+    color: var(--purple);
+    transition: all 0.25s;
+  }
+  .package-btn:hover { background: var(--purple); color: var(--cream); }
+  .package-card.featured .package-btn { border-color: var(--gold); color: var(--gold); }
+  .package-card.featured .package-btn:hover { background: var(--gold); color: var(--purple); }
+
+  /* ── ADD-ONS ── */
+  .addons { background: var(--warm-gray); }
+  .addons-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    background: var(--border);
+    margin-top: 48px;
+  }
+  .addon-card {
+    background: var(--warm-gray);
+    padding: 32px 28px;
+    transition: background 0.2s;
+  }
+  .addon-card:hover { background: white; }
+  .addon-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: var(--purple);
+    margin-bottom: 6px;
+  }
+  .addon-price {
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+  .addon-desc {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  /* ── WHO THIS IS FOR ── */
+  .who { background: var(--purple); padding: 100px 72px; }
+  .who .section-label { color: var(--gold); }
+  .who .section-label::before { background: var(--gold); }
+  .who .section-title { color: var(--cream); margin-bottom: 48px; }
+  .who-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+  .who-card {
+    border-top: 1px solid rgba(200,169,110,0.3);
+    padding-top: 24px;
+  }
+  .who-card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--cream);
+    margin-bottom: 10px;
+  }
+  .who-card p {
+    font-size: 0.88rem;
+    font-weight: 300;
+    color: rgba(250,247,242,0.65);
+    line-height: 1.75;
+  }
+
+  /* ── CTA ── */
+  .cta-section {
+    background: var(--cream);
+    padding: 120px 72px;
+    text-align: center;
+  }
+  .cta-section .section-label { justify-content: center; }
+  .cta-section .section-label::before { display: none; }
+  .cta-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    font-weight: 300;
+    color: var(--purple);
+    max-width: 650px;
+    margin: 0 auto 20px;
+    line-height: 1.2;
+  }
+  .cta-title em { font-style: italic; color: var(--gold); }
+  .cta-sub {
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--text-muted);
+    max-width: 480px;
+    margin: 0 auto 48px;
+    line-height: 1.75;
+  }
+  .cta-actions { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+  .btn-primary-dark {
+    display: inline-block;
+    background: var(--purple);
+    color: var(--cream);
+    padding: 16px 36px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  .btn-primary-dark:hover { background: var(--purple-mid); }
+  .btn-ghost-dark {
+    display: inline-block;
+    color: var(--purple);
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 2px;
+    transition: all 0.2s;
+  }
+  .btn-ghost-dark:hover { color: var(--gold); }
+  .cta-note {
+    margin-top: 32px;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+  }
+  .cta-note a { color: var(--purple); text-decoration: none; border-bottom: 1px solid var(--border); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink);
+    padding: 48px 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--cream);
+    opacity: 0.6;
+  }
+  .footer-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-style: italic;
+    color: rgba(250,247,242,0.35);
+  }
+  .footer-links { display: flex; gap: 24px; list-style: none; }
+  .footer-links a {
+    font-size: 0.78rem;
+    color: rgba(250,247,242,0.4);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--gold); }
+
+  /* ── ANIMATIONS ── */
+  .fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 16px 24px; }
+    .hero { padding: 120px 24px 60px; }
+    section { padding: 72px 24px; }
+    .who { padding: 72px 24px; }
+    .packages-grid { grid-template-columns: 1fr; }
+    .addons-grid { grid-template-columns: 1fr 1fr; }
+    .who-grid { grid-template-columns: 1fr; gap: 24px; }
+    .cta-section { padding: 80px 24px; }
+    footer { flex-direction: column; gap: 20px; text-align: center; padding: 40px 24px; }
+    .footer-links { justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">Otano Consulting Group</a>
+  <div class="nav-links">
+    <a href="index.html" class="nav-link">Consulting</a>
+    <a href="marketing.html" class="nav-link active">Marketing</a>
+    <a href="#packages" class="nav-cta">View Packages</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">Social Media & Content Services</div>
+  <h1>Content that <em>works.</em><br/>Management that <em>lasts.</em></h1>
+  <p class="hero-sub">Done-for-you social media and content services for businesses that are ready to show up consistently, grow their audience, and stop stressing about what to post.</p>
+  <div class="hero-actions">
+    <a href="#packages" class="btn-primary">View Packages</a>
+    <a href="index.html" class="btn-ghost">Looking for business consulting? →</a>
+  </div>
+</div>
+
+<!-- WHO THIS IS FOR -->
+<div class="who">
+  <div class="section-label">Who This Is For</div>
+  <h2 class="section-title">Built for businesses that are serious about growth.</h2>
+  <div class="who-grid">
+    <div class="who-card fade-up">
+      <div class="who-card-title">Barbershops & Salons</div>
+      <p>You do great work but your social media doesn't show it. We fix that — consistent content, real clients, steady growth.</p>
+    </div>
+    <div class="who-card fade-up">
+      <div class="who-card-title">Small Service Businesses</div>
+      <p>You're too busy running your business to run your social media. We handle it so you can focus on what you do best.</p>
+    </div>
+    <div class="who-card fade-up">
+      <div class="who-card-title">Local Shops & Brands</div>
+      <p>You want to grow online but don't know where to start. We build the strategy, create the content, and manage it all.</p>
+    </div>
+  </div>
+</div>
+
+<!-- PACKAGES -->
+<section class="packages" id="packages">
+  <div class="section-label">Packages</div>
+  <h2 class="section-title">Choose the level of support you need.</h2>
+  <p class="section-sub">All packages include caption writing, hashtag strategy, and content scheduling. No long-term contracts required to start.</p>
+
+  <div class="packages-grid">
+
+    <!-- Package 1 -->
+    <div class="package-card fade-up">
+      <span class="package-tag">Starter</span>
+      <div class="package-name">Social Media Support</div>
+      <div class="package-price">$750<span style="font-size:1rem;opacity:0.6">/mo</span></div>
+      <p class="package-ideal">Best for businesses that already create content but need help staying consistent and polished.</p>
+      <div class="package-divider"></div>
+      <ul class="package-includes">
+        <li>8 posts per month</li>
+        <li>4 reels edited</li>
+        <li>Caption writing</li>
+        <li>Hashtag strategy</li>
+        <li>Content scheduling</li>
+        <li>Monthly content calendar</li>
+      </ul>
+      <a href="mailto:otanoconsultinggroup@gmail.com" class="package-btn">Get Started →</a>
+    </div>
+
+    <!-- Package 2 (featured) -->
+    <div class="package-card featured fade-up">
+      <span class="package-tag">Most Popular</span>
+      <div class="package-name">Social Media Growth</div>
+      <div class="package-price">$1,200<span style="font-size:1rem;opacity:0.6">/mo</span></div>
+      <p class="package-ideal">Best for businesses that want consistent growth and stronger content performance.</p>
+      <div class="package-divider"></div>
+      <ul class="package-includes">
+        <li>12 posts per month</li>
+        <li>8 reels edited</li>
+        <li>Content strategy</li>
+        <li>Caption writing</li>
+        <li>Hashtag optimization</li>
+        <li>Story guidance</li>
+        <li>Monthly analytics report</li>
+        <li>Scheduling + posting</li>
+      </ul>
+      <a href="mailto:otanoconsultinggroup@gmail.com" class="package-btn">Get Started →</a>
+    </div>
+
+    <!-- Package 3 -->
+    <div class="package-card fade-up">
+      <span class="package-tag">Full Service</span>
+      <div class="package-name">Full Content + Management</div>
+      <div class="package-price">$2,400<span style="font-size:1rem;opacity:0.6">/mo</span></div>
+      <p class="package-ideal">Best for busy business owners who want everything handled — content creation + full management.</p>
+      <div class="package-divider"></div>
+      <ul class="package-includes">
+        <li>1 monthly content shoot</li>
+        <li>15–20 professional photos</li>
+        <li>10–12 reels created</li>
+        <li>12–16 posts per month</li>
+        <li>Full social media management</li>
+        <li>Content strategy</li>
+        <li>Caption writing</li>
+        <li>Scheduling + posting</li>
+        <li>Monthly performance report</li>
+      </ul>
+      <a href="mailto:otanoconsultinggroup@gmail.com" class="package-btn">Get Started →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ADD-ONS -->
+<section class="addons">
+  <div class="section-label">Add-On Services</div>
+  <h2 class="section-title">Need something specific?</h2>
+  <div class="addons-grid">
+    <div class="addon-card fade-up">
+      <div class="addon-name">Additional Content Shoot</div>
+      <div class="addon-price">$500</div>
+      <p class="addon-desc">An extra shoot for campaigns, product launches, or seasonal content.</p>
+    </div>
+    <div class="addon-card fade-up">
+      <div class="addon-name">Social Media Audit</div>
+      <div class="addon-price">$200</div>
+      <p class="addon-desc">A full review of your current social presence with actionable recommendations.</p>
+    </div>
+    <div class="addon-card fade-up">
+      <div class="addon-name">Profile Optimization</div>
+      <div class="addon-price">$300</div>
+      <p class="addon-desc">Bio, highlights, link in bio, and profile setup done right from the start.</p>
+    </div>
+    <div class="addon-card fade-up">
+      <div class="addon-name">Paid Ad Management</div>
+      <div class="addon-price">Starting at $600/mo</div>
+      <p class="addon-desc">Meta and Instagram ad management to amplify your reach and drive results.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="section-label">Get Started</div>
+  <h2 class="cta-title">Ready to stop stressing about <em>what to post?</em></h2>
+  <p class="cta-sub">Let's talk about your business and find the right package for where you are right now.</p>
+  <div class="cta-actions">
+    <a href="mailto:otanoconsultinggroup@gmail.com" class="btn-primary-dark">Get in Touch</a>
+    <a href="index.html" class="btn-ghost-dark">View Consulting Services →</a>
+  </div>
+  <p class="cta-note">Not sure which package is right for you? <a href="https://www.linkedin.com/in/miriamotano/" target="_blank">Send a message on LinkedIn</a> and we'll figure it out together.</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Otano Consulting Group</div>
+  <div class="footer-tagline">Strategy that moves you forward.</div>
+  <ul class="footer-links">
+    <li><a href="https://www.linkedin.com/in/miriamotano/" target="_blank">LinkedIn</a></li>
+    <li><a href="index.html">Consulting</a></li>
+    <li><a href="#packages">Packages</a></li>
+  </ul>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 120);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
