@@ -537,6 +537,76 @@
     footer { flex-direction: column; gap: 20px; text-align: center; padding: 40px 24px; }
     .footer-links { justify-content: center; }
   }
+
+/* Shared visual refresh */
+:root { --text-muted:#625663; }
+html { scroll-padding-top:100px; }
+section { padding:76px 6%; }
+nav { padding:16px 5%; }
+.nav-logo { max-width:260px; }
+.nav-links { display:flex; gap:20px; align-items:center; }
+.nav-link { color:var(--purple); opacity:1; text-decoration:none; font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; }
+.menu-toggle { display:none; }
+a:focus-visible, summary:focus-visible, button:focus-visible { outline:3px solid #9b732f; outline-offset:5px; }
+.hero { min-height:680px; }
+.hero-left { padding:72px 10%; }
+.hero-sub { color:#625663; margin-bottom:30px; }
+.hero-right.portrait-panel { display:flex; padding:36px; background:var(--purple); }
+.portrait { margin:0; width:100%; max-width:420px; position:relative; z-index:2; }
+.portrait img { display:block; width:100%; height:460px; object-fit:cover; object-position:50% 40%; border-radius:180px 180px 4px 4px; }
+.portrait figcaption { color:#fff; padding-top:20px; font-size:.85rem; }
+.portrait figcaption strong { display:block; color:#e2c792; font:1.7rem 'Cormorant Garamond',Georgia,serif; }
+.section-label,.callout-label,.package-tag,.offer-tag { color:#806027; }
+.section-sub { max-width:740px; margin-bottom:36px; }
+.packages-grid,.offers-grid { gap:20px; background:transparent; margin-top:32px; align-items:start; }
+.package-card,.offer-card { border:1px solid var(--border); padding:32px 26px; border-radius:6px; }
+.package-card.featured,.offer-card.featured { background:var(--purple); }
+.package-price,.offer-price,.addon-price { color:#806027; }
+.featured .package-price,.featured .offer-price,.featured .package-tag,.featured .offer-tag { color:#e2c792; }
+.package-card.featured .package-ideal,.package-card.featured .package-includes li,.offer-card.featured .offer-desc,.offer-card.featured .offer-includes li { color:#eee6f2; }
+.package-ideal,.offer-desc { font-style:normal; font-size:.9rem; }
+.package-includes,.offer-includes { margin-bottom:20px; }
+.package-includes li,.offer-includes li { font-size:.88rem; }
+.service-details { margin:0 0 24px; }
+.service-details summary { cursor:pointer; padding:10px 0; font-size:.85rem; font-weight:500; }
+.service-details ul { margin-top:12px; }
+.terms-panel { margin-top:28px; padding:24px 28px; background:var(--warm-gray); border-left:3px solid var(--gold); max-width:900px; color:#544957; }
+.terms-panel h3 { font:1.5rem 'Cormorant Garamond',Georgia,serif; color:var(--purple); margin-bottom:8px; }
+.terms-panel p { font-size:.9rem; margin:8px 0; }
+.who,.cta-section { padding:76px 6%; }
+.who-card p,.cta-section .cta-sub,.cta-section .cta-note { color:#eee6f2; }
+.consulting-page .cta-section .cta-sub,.consulting-page .cta-section .cta-note { color:#625663; }
+.about-left,.about-right { padding:64px 10%; }
+.about-left p { color:#eee6f2; }
+.footer-logo { opacity:1; }
+.footer-links a,.footer-tagline { color:#c6bac5; }
+.hero-stats { margin-top:32px; padding-top:24px; }
+.fade-up { opacity:1; transform:none; }
+@media(max-width:900px) {
+ .hero { min-height:auto; }
+ .hero-left { padding:64px 24px 36px; }
+ .hero-right.portrait-panel { padding:28px 24px; }
+ .portrait { max-width:340px; }
+ .portrait img { height:360px; }
+ section,.who,.cta-section { padding:52px 24px; }
+ .package-card,.offer-card { padding:28px 24px; }
+ .offers-grid { gap:20px; }
+ .about-left,.about-right { padding:48px 24px; }
+ nav { padding:14px 20px; }
+ .nav-logo { font-size:.85rem; max-width:205px; }
+ .menu-toggle { display:block; border:1px solid var(--purple); background:transparent; color:var(--purple); padding:9px 12px; font:inherit; font-size:.8rem; cursor:pointer; }
+ .nav-links { display:none; position:absolute; top:100%; left:0; right:0; background:var(--cream); border-bottom:1px solid var(--border); padding:20px 24px; align-items:stretch; flex-direction:column; gap:20px; }
+ .nav-links.is-open { display:flex; }
+ .nav-links a { padding:8px; }
+ .nav-links .nav-cta { padding:12px; text-align:center; }
+ .hero-actions { gap:16px; flex-wrap:wrap; }
+ .addons-grid { grid-template-columns:1fr; }
+ .package-btn,.offer-btn { font-size:.72rem; letter-spacing:.06em; }
+}
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { animation:none!important; transition:none!important; } }
+
+.social-proof { background:#f0ece4; }.social-grid { display:grid;grid-template-columns:1fr 1fr;gap:24px; }.social-card { display:block; padding:32px; background:#faf7f2; border:1px solid var(--border); text-decoration:none; color:var(--purple); border-radius:6px; }.social-card h3 { font:2.2rem 'Cormorant Garamond',Georgia,serif; margin-bottom:8px; }.social-card p { color:#625663; margin-bottom:12px; }.social-arrow { display:block; margin-top:24px; font-weight:500; }.social-note { font-size:.8rem; color:#625663; margin-top:20px; }@media(max-width:600px){.social-grid{grid-template-columns:1fr;}}
+.consulting-page .hero h1 em { color:#806027; }
 </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FG1D96ST3H"></script>
@@ -547,17 +617,17 @@
   gtag('config', 'G-FG1D96ST3H');
 </script>
 </head>
-<body>
+<body class="marketing-page">
 
 <!-- NAV -->
-<nav>
-  <a href="index.html" class="nav-logo">Otano Consulting Group</a>
-  <div class="nav-links">
-    <a href="index.html" class="nav-link active">Marketing</a>
-    <a href="consulting.html" class="nav-link">Consulting</a>
-    <a href="#packages" class="nav-cta">View Packages</a>
-  </div>
-</nav>
+<nav aria-label="Main navigation">
+<a href="index.html" class="nav-logo">Otano Consulting Group</a>
+<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">Menu</button>
+<div class="nav-links" id="site-menu">
+<a href="index.html" class="nav-link" aria-current="page">Marketing</a>
+<a href="consulting.html" class="nav-link">Consulting</a>
+<a href="#packages" class="nav-cta">View Packages</a>
+</div></nav>
 
 <!-- HERO -->
 <div class="hero">
@@ -584,26 +654,12 @@
       </div>
     </div>
   </div>
-  <div class="hero-right">
-    <div class="hero-cards">
-      <div class="hero-card">
-        <div class="hero-card-label">Starter</div>
-        <div class="hero-card-title">Social Media Support</div>
-        <div class="hero-card-price"><span>$600</span>/month · 8 posts + 4 reels</div>
-      </div>
-      <div class="hero-card">
-        <div class="hero-card-label">Most Popular ✦</div>
-        <div class="hero-card-title">Social Media Growth</div>
-        <div class="hero-card-price"><span>$1,000</span>/month · 12 posts + 8 reels</div>
-      </div>
-      <div class="hero-card">
-        <div class="hero-card-label">Full Service</div>
-        <div class="hero-card-title">Full Content + Management</div>
-        <div class="hero-card-price"><span>$2,000</span>/month · Everything handled</div>
-      </div>
-    </div>
-  </div>
+  <div class="hero-right portrait-panel">
+<figure class="portrait"><img src="miriam-otano.jpg" alt="Miriam Otano, founder of Otano Consulting Group" width="1242" height="2208" fetchpriority="high"/><figcaption><strong>Meet Miriam Otano</strong>Founder · Strategy advisor · Content partner</figcaption></figure>
 </div>
+</div>
+
+<section class="social-proof" id="content"><div class="section-label">Meet your content partner</div><h2 class="section-title">A real person behind your brand.</h2><p class="section-sub">I'm Miriam Otano. I help small business owners clarify what they sell and show up consistently online. Explore my own channels for a look at my content and professional background.</p><div class="social-grid"><a class="social-card" href="https://www.instagram.com/itsmiriamotano/" target="_blank" rel="noopener noreferrer"><span class="section-label">My own content</span><h3>Instagram</h3><p>@itsmiriamotano</p><p>Explore my personal posts and reels.</p><span class="social-arrow">Visit Instagram ↗</span></a><a class="social-card" href="https://www.linkedin.com/in/miriamotano/" target="_blank" rel="noopener noreferrer"><span class="section-label">Professional background</span><h3>LinkedIn</h3><p>Miriam Otano</p><p>Get to know the person behind Otano Consulting Group.</p><span class="social-arrow">Connect on LinkedIn ↗</span></a></div><p class="social-note">These are my own channels, shared as an introduction to my work and perspective.</p></section>
 
 <!-- WHAT WE DO -->
 <section class="what">
@@ -632,7 +688,7 @@
 <section class="packages" id="packages">
   <div class="section-label">Packages</div>
   <h2 class="section-title">Pick the level of support you need.</h2>
-  <p class="section-sub">All packages include caption writing, hashtag strategy, and content scheduling. All social media packages begin with a three-month minimum commitment, billed monthly. After the initial three months, service continues month-to-month. Add-ons are priced separately.</p>
+  <p class="section-sub">Choose the support that fits your business. Every package includes captions, hashtag strategy, and content scheduling.</p>
 
   <div class="packages-grid">
     <div class="package-card fade-up">
@@ -641,14 +697,7 @@
       <div class="package-price">$600<span style="font-size:1rem;opacity:0.6">/mo</span></div>
       <p class="package-ideal">Best for businesses that already create content but need help staying consistent and polished.</p>
       <div class="package-divider"></div>
-      <ul class="package-includes">
-        <li>8 posts per month</li>
-        <li>4 reels edited</li>
-        <li>Caption writing</li>
-        <li>Hashtag strategy</li>
-        <li>Content scheduling</li>
-        <li>Monthly content calendar</li>
-      </ul>
+      <ul class="package-includes"><li>8 posts per month</li><li>4 reels edited</li></ul><details class="service-details"><summary>Everything included</summary><ul class="package-includes"><li>Caption writing</li><li>Hashtag strategy</li><li>Content scheduling</li><li>Monthly content calendar</li></ul></details>
       <a href="https://calendly.com/otanoconsultinggroup/new-meeting-1" target="_blank" class="package-btn">Book a Discovery Call →</a>
     </div>
 
@@ -658,16 +707,7 @@
       <div class="package-price">$1,000<span style="font-size:1rem;opacity:0.6">/mo</span></div>
       <p class="package-ideal">Best for businesses that want consistent growth and stronger content performance.</p>
       <div class="package-divider"></div>
-      <ul class="package-includes">
-        <li>12 posts per month</li>
-        <li>8 reels edited</li>
-        <li>Content strategy</li>
-        <li>Caption writing</li>
-        <li>Hashtag optimization</li>
-        <li>Story guidance</li>
-        <li>Monthly analytics report</li>
-        <li>Scheduling + posting</li>
-      </ul>
+      <ul class="package-includes"><li>12 posts per month</li><li>8 reels edited</li></ul><details class="service-details"><summary>Everything included</summary><ul class="package-includes"><li>Content strategy</li><li>Caption writing</li><li>Hashtag optimization</li><li>Story guidance</li><li>Monthly analytics report</li><li>Scheduling + posting</li></ul></details>
       <a href="https://calendly.com/otanoconsultinggroup/new-meeting-1" target="_blank" class="package-btn">Book a Discovery Call →</a>
     </div>
 
@@ -677,20 +717,11 @@
       <div class="package-price">$2,000<span style="font-size:1rem;opacity:0.6">/mo</span></div>
       <p class="package-ideal">Best for busy business owners who want everything handled — content creation + full management.</p>
       <div class="package-divider"></div>
-      <ul class="package-includes">
-        <li>1 monthly content shoot</li>
-        <li>15–20 professional photos</li>
-        <li>10–12 reels created</li>
-        <li>12–16 posts per month</li>
-        <li>Full social media management</li>
-        <li>Content strategy</li>
-        <li>Caption writing</li>
-        <li>Scheduling + posting</li>
-        <li>Monthly performance report</li>
-      </ul>
+      <ul class="package-includes"><li>1 monthly content shoot</li><li>15–20 professional photos</li><li>10–12 reels created</li><li>12–16 posts per month</li></ul><details class="service-details"><summary>Everything included</summary><ul class="package-includes"><li>Full social media management</li><li>Content strategy</li><li>Caption writing</li><li>Scheduling + posting</li><li>Monthly performance report</li></ul></details>
       <a href="https://calendly.com/otanoconsultinggroup/new-meeting-1" target="_blank" class="package-btn">Book a Discovery Call →</a>
     </div>
   </div>
+<div class="terms-panel"><h3>A clear commitment, from the start.</h3><p>All social media packages begin with a three-month minimum commitment, billed monthly. After the initial three months, service continues month-to-month. Add-ons are priced separately.</p></div>
 </section>
 
 <!-- ADD-ONS -->
@@ -783,6 +814,16 @@
     });
   }, { threshold: 0.1 });
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+
+
+<script>
+const menuButton = document.querySelector('.menu-toggle');
+const menu = document.querySelector('#site-menu');
+function closeMenu() { menu.classList.remove('is-open'); menuButton.setAttribute('aria-expanded','false'); }
+menuButton.addEventListener('click', () => { const open=menu.classList.toggle('is-open'); menuButton.setAttribute('aria-expanded',String(open)); });
+menu.querySelectorAll('a').forEach(link => link.addEventListener('click',closeMenu));
+document.addEventListener('keydown', event => { if(event.key==='Escape' && menu.classList.contains('is-open')) { closeMenu(); menuButton.focus(); } });
 </script>
 
 </body>

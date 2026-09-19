@@ -619,6 +619,76 @@
     footer { flex-direction: column; gap: 20px; text-align: center; padding: 40px 24px; }
     .footer-links { justify-content: center; }
   }
+
+/* Shared visual refresh */
+:root { --text-muted:#625663; }
+html { scroll-padding-top:100px; }
+section { padding:76px 6%; }
+nav { padding:16px 5%; }
+.nav-logo { max-width:260px; }
+.nav-links { display:flex; gap:20px; align-items:center; }
+.nav-link { color:var(--purple); opacity:1; text-decoration:none; font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; }
+.menu-toggle { display:none; }
+a:focus-visible, summary:focus-visible, button:focus-visible { outline:3px solid #9b732f; outline-offset:5px; }
+.hero { min-height:680px; }
+.hero-left { padding:72px 10%; }
+.hero-sub { color:#625663; margin-bottom:30px; }
+.hero-right.portrait-panel { display:flex; padding:36px; background:var(--purple); }
+.portrait { margin:0; width:100%; max-width:420px; position:relative; z-index:2; }
+.portrait img { display:block; width:100%; height:460px; object-fit:cover; object-position:50% 40%; border-radius:180px 180px 4px 4px; }
+.portrait figcaption { color:#fff; padding-top:20px; font-size:.85rem; }
+.portrait figcaption strong { display:block; color:#e2c792; font:1.7rem 'Cormorant Garamond',Georgia,serif; }
+.section-label,.callout-label,.package-tag,.offer-tag { color:#806027; }
+.section-sub { max-width:740px; margin-bottom:36px; }
+.packages-grid,.offers-grid { gap:20px; background:transparent; margin-top:32px; align-items:start; }
+.package-card,.offer-card { border:1px solid var(--border); padding:32px 26px; border-radius:6px; }
+.package-card.featured,.offer-card.featured { background:var(--purple); }
+.package-price,.offer-price,.addon-price { color:#806027; }
+.featured .package-price,.featured .offer-price,.featured .package-tag,.featured .offer-tag { color:#e2c792; }
+.package-card.featured .package-ideal,.package-card.featured .package-includes li,.offer-card.featured .offer-desc,.offer-card.featured .offer-includes li { color:#eee6f2; }
+.package-ideal,.offer-desc { font-style:normal; font-size:.9rem; }
+.package-includes,.offer-includes { margin-bottom:20px; }
+.package-includes li,.offer-includes li { font-size:.88rem; }
+.service-details { margin:0 0 24px; }
+.service-details summary { cursor:pointer; padding:10px 0; font-size:.85rem; font-weight:500; }
+.service-details ul { margin-top:12px; }
+.terms-panel { margin-top:28px; padding:24px 28px; background:var(--warm-gray); border-left:3px solid var(--gold); max-width:900px; color:#544957; }
+.terms-panel h3 { font:1.5rem 'Cormorant Garamond',Georgia,serif; color:var(--purple); margin-bottom:8px; }
+.terms-panel p { font-size:.9rem; margin:8px 0; }
+.who,.cta-section { padding:76px 6%; }
+.who-card p,.cta-section .cta-sub,.cta-section .cta-note { color:#eee6f2; }
+.consulting-page .cta-section .cta-sub,.consulting-page .cta-section .cta-note { color:#625663; }
+.about-left,.about-right { padding:64px 10%; }
+.about-left p { color:#eee6f2; }
+.footer-logo { opacity:1; }
+.footer-links a,.footer-tagline { color:#c6bac5; }
+.hero-stats { margin-top:32px; padding-top:24px; }
+.fade-up { opacity:1; transform:none; }
+@media(max-width:900px) {
+ .hero { min-height:auto; }
+ .hero-left { padding:64px 24px 36px; }
+ .hero-right.portrait-panel { padding:28px 24px; }
+ .portrait { max-width:340px; }
+ .portrait img { height:360px; }
+ section,.who,.cta-section { padding:52px 24px; }
+ .package-card,.offer-card { padding:28px 24px; }
+ .offers-grid { gap:20px; }
+ .about-left,.about-right { padding:48px 24px; }
+ nav { padding:14px 20px; }
+ .nav-logo { font-size:.85rem; max-width:205px; }
+ .menu-toggle { display:block; border:1px solid var(--purple); background:transparent; color:var(--purple); padding:9px 12px; font:inherit; font-size:.8rem; cursor:pointer; }
+ .nav-links { display:none; position:absolute; top:100%; left:0; right:0; background:var(--cream); border-bottom:1px solid var(--border); padding:20px 24px; align-items:stretch; flex-direction:column; gap:20px; }
+ .nav-links.is-open { display:flex; }
+ .nav-links a { padding:8px; }
+ .nav-links .nav-cta { padding:12px; text-align:center; }
+ .hero-actions { gap:16px; flex-wrap:wrap; }
+ .addons-grid { grid-template-columns:1fr; }
+ .package-btn,.offer-btn { font-size:.72rem; letter-spacing:.06em; }
+}
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { animation:none!important; transition:none!important; } }
+
+.social-proof { background:#f0ece4; }.social-grid { display:grid;grid-template-columns:1fr 1fr;gap:24px; }.social-card { display:block; padding:32px; background:#faf7f2; border:1px solid var(--border); text-decoration:none; color:var(--purple); border-radius:6px; }.social-card h3 { font:2.2rem 'Cormorant Garamond',Georgia,serif; margin-bottom:8px; }.social-card p { color:#625663; margin-bottom:12px; }.social-arrow { display:block; margin-top:24px; font-weight:500; }.social-note { font-size:.8rem; color:#625663; margin-top:20px; }@media(max-width:600px){.social-grid{grid-template-columns:1fr;}}
+.consulting-page .hero h1 em { color:#806027; }
 </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FG1D96ST3H"></script>
@@ -629,17 +699,17 @@
   gtag('config', 'G-FG1D96ST3H');
 </script>
 </head>
-<body>
+<body class="consulting-page">
 
 <!-- NAV -->
-<nav>
-  <a href="index.html" class="nav-logo">Otano Consulting Group</a>
-  <div style="display:flex;gap:16px;align-items:center;">
-    <a href="index.html" style="font-size:0.78rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--purple);text-decoration:none;">Marketing</a>
-    <a href="consulting.html" style="font-size:0.78rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--purple);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:2px;">Consulting</a>
-    <a href="#offers" class="nav-cta">View Services</a>
-  </div>
-</nav>
+<nav aria-label="Main navigation">
+<a href="index.html" class="nav-logo">Otano Consulting Group</a>
+<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">Menu</button>
+<div class="nav-links" id="site-menu">
+<a href="index.html" class="nav-link">Marketing</a>
+<a href="consulting.html" class="nav-link" aria-current="page">Consulting</a>
+<a href="#offers" class="nav-cta">View Services</a>
+</div></nav>
 
 <!-- HERO -->
 <section class="hero">
@@ -652,14 +722,9 @@
       <a href="#about" class="btn-ghost">About Miriam →</a>
     </div>
   </div>
-  <div class="hero-right">
-    <div class="hero-graphic"></div>
-    <div class="hero-card">
-      <div class="hero-card-label">What clients say</div>
-      <p>"I walked in with a mess of ideas and walked out with a real plan. For the first time, I actually knew what to do next."</p>
-      <div class="hero-card-sig"><strong>Business Clarity Session</strong> — Otano Client</div>
-    </div>
-  </div>
+  <div class="hero-right portrait-panel">
+<figure class="portrait"><img src="miriam-otano.jpg" alt="Miriam Otano, founder of Otano Consulting Group" width="1242" height="2208" fetchpriority="high"/><figcaption><strong>Meet Miriam Otano</strong>Founder · Strategy advisor · Content partner</figcaption></figure>
+</div>
 </section>
 
 <!-- PROBLEM -->
@@ -692,13 +757,7 @@
       <div class="offer-price">$300</div>
       <div class="offer-divider"></div>
       <p class="offer-desc">A focused 90-minute strategy session for founders who need direction fast. You leave with a clear plan — not more confusion.</p>
-      <ul class="offer-includes">
-        <li>Business idea validation or cleanup</li>
-        <li>Offer + pricing direction</li>
-        <li>Clear definition of your target customer</li>
-        <li>Concrete next steps — no fluff</li>
-        <li>Written follow-up summary</li>
-      </ul>
+      <ul class="offer-includes"><li>Business idea validation or cleanup</li><li>Offer + pricing direction</li><li>Clear definition of your target customer</li></ul><details class="service-details"><summary>Everything included</summary><ul class="offer-includes"><li>Concrete next steps — no fluff</li><li>Written follow-up summary</li></ul></details>
       <a href="https://buy.stripe.com/3cI14o5p83eCfj0efCdMI00" target="_blank" class="offer-btn">Pay & Book — $300 →</a>
     </div>
 
@@ -707,17 +766,11 @@
       <span class="offer-tag">Most Popular</span>
       <div class="offer-name">Business Setup / Reset</div>
       <div class="offer-price">$1,200 <span style="font-size:0.9rem;opacity:0.6">founder rate</span></div>
-      <p class="offer-desc">Available to the first 20 Business Setup / Reset clients who sign their agreement and pay their deposit. Pricing increases to $1,800 after those places are filled.</p>
+      <p class="offer-desc">For the first 20 Setup / Reset clients. Then $1,800.</p>
       <div class="offer-divider"></div>
       <p class="offer-desc">A 2–4 week engagement to build or reset your business foundation from the ground up. This is where real change happens.</p>
-      <ul class="offer-includes">
-        <li>Business model + offer structure</li>
-        <li>Pricing framework</li>
-        <li>Light marketing direction</li>
-        <li>30–60 day action plan</li>
-        <li>2–3 strategy sessions + async support</li>
-      </ul>
-      <p class="offer-desc">Following a discovery call and signed agreement, a $600 deposit reserves your project start date and is applied toward your $1,200 total. The remaining $600 is due before your final strategy session.</p>
+      <ul class="offer-includes"><li>Business model + offer structure</li><li>Pricing framework</li><li>Light marketing direction</li></ul><details class="service-details"><summary>Everything included</summary><ul class="offer-includes"><li>30–60 day action plan</li><li>2–3 strategy sessions + async support</li></ul></details>
+      <p class="offer-desc">$600 to reserve your start date. $600 before your final strategy session. <a href="#founder-terms" style="color:inherit">Payment details ↓</a></p>
       <a href="https://calendly.com/otanoconsultinggroup/new-meeting-1" target="_blank" rel="noopener noreferrer" class="offer-btn">Book a Free Discovery Call →</a>
     </div>
 
@@ -728,17 +781,12 @@
       <div class="offer-price">$750<span style="font-size:1rem;opacity:0.6">/mo</span></div>
       <div class="offer-divider"></div>
       <p class="offer-desc">Ongoing advisory support for business owners who want continued strategic guidance as their business grows. Available to past clients only.</p>
-      <ul class="offer-includes">
-        <li>1–2 strategy calls per month</li>
-        <li>Decision support & problem-solving</li>
-        <li>Strategy adjustments as you grow</li>
-        <li>Accountability — not execution</li>
-        <li>No busywork. No on-call texting.</li>
-      </ul>
+      <ul class="offer-includes"><li>1–2 strategy calls per month</li><li>Decision support & problem-solving</li><li>Strategy adjustments as you grow</li></ul><details class="service-details"><summary>Everything included</summary><ul class="offer-includes"><li>Accountability — not execution</li><li>No busywork. No on-call texting.</li></ul></details>
       <a href="https://buy.stripe.com/00wbJ218SeXkdaSdbydMI01" target="_blank" class="offer-btn">Pay & Get Started — $750 →</a>
     </div>
 
   </div>
+<div class="terms-panel" id="founder-terms"><h3>Founder rate &amp; payment schedule</h3><p>Available to the first 20 Business Setup / Reset clients who sign their agreement and pay their deposit. Pricing increases to $1,800 after those places are filled.</p><p>Following a discovery call and signed agreement, a $600 deposit reserves your project start date and is applied toward your $1,200 total. The remaining $600 is due before your final strategy session.</p></div>
 </section>
 
 <!-- HOW IT WORKS -->
@@ -833,6 +881,16 @@
     });
   }, { threshold: 0.1 });
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+
+
+<script>
+const menuButton = document.querySelector('.menu-toggle');
+const menu = document.querySelector('#site-menu');
+function closeMenu() { menu.classList.remove('is-open'); menuButton.setAttribute('aria-expanded','false'); }
+menuButton.addEventListener('click', () => { const open=menu.classList.toggle('is-open'); menuButton.setAttribute('aria-expanded',String(open)); });
+menu.querySelectorAll('a').forEach(link => link.addEventListener('click',closeMenu));
+document.addEventListener('keydown', event => { if(event.key==='Escape' && menu.classList.contains('is-open')) { closeMenu(); menuButton.focus(); } });
 </script>
 
 </body>
