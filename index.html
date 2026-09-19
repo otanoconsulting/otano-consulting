@@ -607,6 +607,8 @@ a:focus-visible, summary:focus-visible, button:focus-visible { outline:3px solid
 
 .social-proof { background:#f0ece4; }.social-grid { display:grid;grid-template-columns:1fr 1fr;gap:24px; }.social-card { display:block; padding:32px; background:#faf7f2; border:1px solid var(--border); text-decoration:none; color:var(--purple); border-radius:6px; }.social-card h3 { font:2.2rem 'Cormorant Garamond',Georgia,serif; margin-bottom:8px; }.social-card p { color:#625663; margin-bottom:12px; }.social-arrow { display:block; margin-top:24px; font-weight:500; }.social-note { font-size:.8rem; color:#625663; margin-top:20px; }@media(max-width:600px){.social-grid{grid-template-columns:1fr;}}
 .consulting-page .hero h1 em { color:#806027; }
+.portrait-crop { overflow:hidden; border-radius:180px 180px 4px 4px; }
+.portrait-crop img { border-radius:0; transform:scale(1.18); transform-origin:50% 28%; object-position:50% 32%; }
 </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FG1D96ST3H"></script>
@@ -655,7 +657,7 @@ a:focus-visible, summary:focus-visible, button:focus-visible { outline:3px solid
     </div>
   </div>
   <div class="hero-right portrait-panel">
-<figure class="portrait"><img src="miriam-otano.jpg" alt="Miriam Otano, founder of Otano Consulting Group" width="1242" height="2208" fetchpriority="high"/><figcaption><strong>Meet Miriam Otano</strong>Founder · Strategy advisor · Content partner</figcaption></figure>
+<figure class="portrait"><div class="portrait-crop"><img src="miriam-otano.jpg" alt="Miriam Otano, founder of Otano Consulting Group" width="1242" height="2208" fetchpriority="high"/></div><figcaption><strong>Meet Miriam Otano</strong>Founder · Strategy advisor · Content partner</figcaption></figure>
 </div>
 </div>
 
