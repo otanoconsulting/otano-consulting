@@ -609,6 +609,7 @@ a:focus-visible, summary:focus-visible, button:focus-visible { outline:3px solid
 .consulting-page .hero h1 em { color:#806027; }
 .portrait-crop { overflow:hidden; border-radius:180px 180px 4px 4px; }
 .portrait-crop img { border-radius:0; transform:scale(1.18) translateX(3%); transform-origin:50% 28%; object-position:50% 40%; }
+.price-prefix { display:block; font-size:.8rem; letter-spacing:.04em; }.price-unit { font-size:.95rem; }.focused-services { background:var(--warm-gray); }.focused-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:32px; margin-bottom:28px; }.focused-grid h3 { font:1.6rem 'Cormorant Garamond',Georgia,serif; color:var(--purple); margin-bottom:10px; }.focused-grid strong { color:#806027; }.focused-grid p,.service-note { color:var(--text-muted); font-size:.9rem; margin:12px 0 24px; }.faq-list { max-width:900px; }.faq details { border-bottom:1px solid var(--border); padding:20px 0; }.faq summary { cursor:pointer; color:var(--purple); font-weight:500; }.faq details p { padding:16px 0 0; color:var(--text-muted); max-width:760px; }.packages-grid { align-items:stretch; }.package-card { display:flex; flex-direction:column; }.package-btn { align-self:start; margin-top:auto; }@media(max-width:900px){.focused-grid{grid-template-columns:1fr;gap:12px;}.hero-stats{flex-wrap:wrap;}}
 </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FG1D96ST3H"></script>
@@ -627,7 +628,7 @@ a:focus-visible, summary:focus-visible, button:focus-visible { outline:3px solid
 <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">Menu</button>
 <div class="nav-links" id="site-menu">
 <a href="index.html" class="nav-link" aria-current="page">Marketing</a>
-<a href="consulting.html" class="nav-link">Consulting</a>
+<a href="#content" class="nav-link">About</a><a href="#faq" class="nav-link">FAQ</a>
 <a href="#packages" class="nav-cta">View Packages</a>
 </div></nav>
 
@@ -644,20 +645,20 @@ a:focus-visible, summary:focus-visible, button:focus-visible { outline:3px solid
     <div class="hero-stats">
       <div>
         <div class="stat-number">3</div>
-        <div class="stat-label">Service packages</div>
+        <div class="stat-label">Ways to work together</div>
       </div>
       <div>
-        <div class="stat-number">$600</div>
-        <div class="stat-label">Starting at / month</div>
+        <div class="stat-number">$1,000</div>
+        <div class="stat-label">Management from / month</div>
       </div>
       <div>
-        <div class="stat-number">0</div>
-        <div class="stat-label">Stress about posting</div>
+        <div class="stat-number">1:1</div>
+        <div class="stat-label">Personalized support</div>
       </div>
     </div>
   </div>
   <div class="hero-right portrait-panel">
-<figure class="portrait"><div class="portrait-crop"><img src="miriam-otano.jpg" alt="Miriam Otano, founder of Otano Consulting Group" width="1242" height="2208" fetchpriority="high"/></div><figcaption><strong>Meet Miriam Otano</strong>Founder · Strategy advisor · Content partner</figcaption></figure>
+<figure class="portrait"><div class="portrait-crop"><img src="miriam-otano.jpg" alt="Miriam Otano, founder of Otano Consulting Group" width="1242" height="2208" fetchpriority="high"/></div><figcaption><strong>Meet Miriam Otano</strong>Founder · Social media strategist · Content partner</figcaption></figure>
 </div>
 </div>
 
@@ -676,84 +677,19 @@ a:focus-visible, summary:focus-visible, button:focus-visible { outline:3px solid
     <div class="what-card fade-up">
       <div class="what-icon">◈</div>
       <div class="what-title">Strategy & Growth</div>
-      <p class="what-desc">Hashtag optimization, content strategy, and monthly analytics — so every post has a purpose and your audience keeps growing.</p>
+      <p class="what-desc">Positioning, content pillars, and a practical growth roadmap — so your content has a clear purpose.</p>
     </div>
     <div class="what-card fade-up">
       <div class="what-icon">◎</div>
       <div class="what-title">Full Management</div>
-      <p class="what-desc">From content shoots to scheduling to performance reports — everything handled so you can focus on running your business.</p>
+      <p class="what-desc">From editing your footage to scheduling and performance reports — ongoing support so you can focus on running your business. On-site production is quoted separately.</p>
     </div>
   </div>
 </section>
 
 <!-- PACKAGES -->
-<section class="packages" id="packages">
-  <div class="section-label">Packages</div>
-  <h2 class="section-title">Pick the level of support you need.</h2>
-  <p class="section-sub">Choose the support that fits your business. Every package includes captions, hashtag strategy, and content scheduling.</p>
-
-  <div class="packages-grid">
-    <div class="package-card fade-up">
-      <span class="package-tag">Starter</span>
-      <div class="package-name">Social Media Support</div>
-      <div class="package-price">$600<span style="font-size:1rem;opacity:0.6">/mo</span></div>
-      <p class="package-ideal">Best for businesses that already create content but need help staying consistent and polished.</p>
-      <div class="package-divider"></div>
-      <ul class="package-includes"><li>8 posts per month</li><li>4 reels edited</li></ul><details class="service-details"><summary>Everything included</summary><ul class="package-includes"><li>Caption writing</li><li>Hashtag strategy</li><li>Content scheduling</li><li>Monthly content calendar</li></ul></details>
-      <a href="https://calendly.com/otanoconsultinggroup/new-meeting-1" target="_blank" class="package-btn">Book a Discovery Call →</a>
-    </div>
-
-    <div class="package-card featured fade-up">
-      <span class="package-tag">Most Popular</span>
-      <div class="package-name">Social Media Growth</div>
-      <div class="package-price">$1,000<span style="font-size:1rem;opacity:0.6">/mo</span></div>
-      <p class="package-ideal">Best for businesses that want consistent growth and stronger content performance.</p>
-      <div class="package-divider"></div>
-      <ul class="package-includes"><li>12 posts per month</li><li>8 reels edited</li></ul><details class="service-details"><summary>Everything included</summary><ul class="package-includes"><li>Content strategy</li><li>Caption writing</li><li>Hashtag optimization</li><li>Story guidance</li><li>Monthly analytics report</li><li>Scheduling + posting</li></ul></details>
-      <a href="https://calendly.com/otanoconsultinggroup/new-meeting-1" target="_blank" class="package-btn">Book a Discovery Call →</a>
-    </div>
-
-    <div class="package-card fade-up">
-      <span class="package-tag">Full Service</span>
-      <div class="package-name">Full Content + Management</div>
-      <div class="package-price">$2,000<span style="font-size:1rem;opacity:0.6">/mo</span></div>
-      <p class="package-ideal">Best for busy business owners who want everything handled — content creation + full management.</p>
-      <div class="package-divider"></div>
-      <ul class="package-includes"><li>1 monthly content shoot</li><li>15–20 professional photos</li><li>10–12 reels created</li><li>12–16 posts per month</li></ul><details class="service-details"><summary>Everything included</summary><ul class="package-includes"><li>Full social media management</li><li>Content strategy</li><li>Caption writing</li><li>Scheduling + posting</li><li>Monthly performance report</li></ul></details>
-      <a href="https://calendly.com/otanoconsultinggroup/new-meeting-1" target="_blank" class="package-btn">Book a Discovery Call →</a>
-    </div>
-  </div>
-<div class="terms-panel"><h3>A clear commitment, from the start.</h3><p>All social media packages begin with a three-month minimum commitment, billed monthly. After the initial three months, service continues month-to-month. Add-ons are priced separately.</p></div>
-</section>
-
-<!-- ADD-ONS -->
-<section class="addons">
-  <div class="section-label">Add-On Services</div>
-  <h2 class="section-title">Need something specific?</h2>
-  <div class="addons-grid">
-    <div class="addon-card fade-up">
-      <div class="addon-name">Additional Content Shoot</div>
-      <div class="addon-price">$500</div>
-      <p class="addon-desc">An extra shoot for campaigns, product launches, or seasonal content.</p>
-    </div>
-    <div class="addon-card fade-up">
-      <div class="addon-name">Social Media Audit</div>
-      <div class="addon-price">$200</div>
-      <p class="addon-desc">A full review of your current social presence with actionable recommendations.</p>
-    </div>
-    <div class="addon-card fade-up">
-      <div class="addon-name">Profile Optimization</div>
-      <div class="addon-price">$300</div>
-      <p class="addon-desc">Bio, highlights, link in bio, and profile setup done right from the start.</p>
-    </div>
-    <div class="addon-card fade-up">
-      <div class="addon-name">Paid Ad Management</div>
-      <div class="addon-price">Starting at $600/mo</div>
-      <p class="addon-desc">Meta and Instagram ad management to amplify your reach and drive results.</p>
-    </div>
-  </div>
-</section>
-
+<section class="packages" id="packages"><div class="section-label">Ways to work together</div><h2 class="section-title">A stronger brand. A clearer plan. Consistent content.</h2><p class="section-sub">Start with a focused refresh, build your growth foundation, or get ongoing social media support.</p><div class="packages-grid"><div class="package-card fade-up"><span class="package-tag">One-time project</span><h3 class="package-name">Brand &amp; Social Reset</h3><div class="package-price">$349</div><p class="package-ideal">For businesses that already have social media but need a professional refresh.</p><ul class="package-includes"><li>Social media audit</li><li>Profile optimization</li><li>Bio + messaging updates</li></ul><details class="service-details"><summary>Everything included</summary><ul class="package-includes"><li>Visual/content direction</li><li>Brand consistency recommendations</li><li>Action plan</li></ul></details><a href="https://calendly.com/otanoconsultinggroup/new-meeting-1" target="_blank" rel="noopener noreferrer" class="package-btn">Book a Discovery Call →</a></div><div class="package-card featured fade-up"><span class="package-tag">One-time project</span><h3 class="package-name">Growth Foundation</h3><div class="package-price">$750</div><p class="package-ideal">Build a clear, connected digital presence with a practical plan for growth.</p><ul class="package-includes"><li>Full digital presence audit</li><li>Instagram/Facebook optimization</li><li>Brand messaging + positioning</li></ul><details class="service-details"><summary>Everything included</summary><ul class="package-includes"><li>Content pillars</li><li>Content style/direction</li><li>Website messaging recommendations</li><li>30-day content strategy</li><li>Growth roadmap/playbook</li></ul></details><a href="https://calendly.com/otanoconsultinggroup/new-meeting-1" target="_blank" rel="noopener noreferrer" class="package-btn">Book a Discovery Call →</a></div><div class="package-card fade-up"><span class="package-tag">Ongoing support</span><h3 class="package-name">Social Media Management</h3><div class="package-price"><span class="price-prefix">Starting at</span> $1,000<span class="price-unit">/month</span></div><p class="package-ideal">Strategy and ongoing execution, tailored to your audience and business goals.</p><ul class="package-includes"><li>Content strategy</li><li>Up to 16 primary posts/Reels per month</li><li>Video editing from client-provided footage</li></ul><details class="service-details"><summary>Everything included</summary><ul class="package-includes"><li>Captions, hooks + calls to action</li><li>Branded graphics/Reel covers</li><li>Instagram + Facebook + TikTok/short-form distribution as appropriate</li><li>Stories</li><li>Content calendar</li><li>Basic engagement/community monitoring</li><li>Monthly analytics</li><li>Monthly optimization recommendations</li></ul></details><a href="https://calendly.com/otanoconsultinggroup/new-meeting-1" target="_blank" rel="noopener noreferrer" class="package-btn">Book a Discovery Call →</a></div></div><div class="terms-panel"><h3>Clear scope. No surprises.</h3><p>Brand &amp; Social Reset and Growth Foundation are one-time projects. Monthly services begin with a three-month minimum commitment, billed monthly, then continue month-to-month.</p><p>Management includes up to 16 primary content pieces total per month across posts and Reels. Platforms, distribution, Stories, and engagement scope are agreed in your proposal. On-site filming, professional photography, paid advertising, and ad spend are separate.</p></div></section>
+<section class="focused-services"><div class="section-label">Focused support</div><h2 class="section-title">Need a specific starting point?</h2><p class="section-sub">Choose a standalone audit or content plan, or ask about broader support.</p><div class="focused-grid"><div><h3>Social Media Audit</h3><strong>$199</strong><p>A focused review of your social presence with actionable recommendations.</p></div><div><h3>30-Day Content Strategy</h3><strong>$399</strong><p>A standalone plan to bring direction and consistency to your next month of content.</p></div><div><h3>Custom Growth Strategy</h3><strong>Starting at $1,500/month</strong><p>A custom proposal for broader marketing needs, multiple locations, or more complex growth goals.</p></div></div><p class="service-note">Looking for a Profile + Brand Revamp? Choose Brand &amp; Social Reset. For Social Media Setup / Digital Refresh, choose Growth Foundation.</p><a href="https://calendly.com/otanoconsultinggroup/new-meeting-1" class="btn-outline" target="_blank" rel="noopener noreferrer">Discuss your needs →</a></section>
 <!-- WHO THIS IS FOR -->
 <div class="who">
   <div class="section-label">Who This Is For</div>
@@ -774,16 +710,7 @@ a:focus-visible, summary:focus-visible, button:focus-visible { outline:3px solid
   </div>
 </div>
 
-<!-- CONSULTING CALLOUT -->
-<div class="consulting-callout">
-  <div>
-    <div class="callout-label">Also Available</div>
-    <div class="callout-title">Need business strategy, not just social media?</div>
-    <p class="callout-desc">Otano Consulting Group also offers focused business strategy and advisory services for founders and business owners who need clarity on their offers, pricing, and direction.</p>
-  </div>
-  <a href="consulting.html" class="btn-ghost-dark">View Consulting Services →</a>
-</div>
-
+<section class="faq" id="faq"><div class="section-label">Good to know</div><h2 class="section-title">Your questions, answered.</h2><div class="faq-list"><details><summary>Do I have to sign a long-term contract?</summary><p>One-time projects have a defined scope. Monthly services begin with a three-month minimum commitment, billed monthly, then continue month-to-month. Your proposal and service agreement outline the scope and cancellation terms.</p></details><details><summary>Do your monthly packages include content creation?</summary><p>Yes. Monthly management includes content strategy, captions, graphics, video editing from client-provided footage, and publishing within the agreed scope. On-site filming and professional photography are quoted separately.</p></details><details><summary>Do I need to provide photos and videos?</summary><p>For most monthly management packages, you provide raw photos and video footage for us to transform into polished content. Additional content-production services can be discussed if needed.</p></details><details><summary>Are paid ads included?</summary><p>No. Paid advertising and ad spend are separate from organic social media management.</p></details><details><summary>Can you work with my existing website and social accounts?</summary><p>Yes. We can improve your current digital presence rather than requiring you to start over. Growth Foundation includes website messaging recommendations; website development is not included.</p></details><details><summary>What platforms do you manage?</summary><p>Services can include Instagram, Facebook, TikTok and other short-form platforms depending on your audience and strategy. Your proposal confirms the platforms and distribution included.</p></details><details><summary>How quickly can I expect results?</summary><p>Social media growth is cumulative. The initial focus is building a stronger brand presence, consistent content and a clear strategy; performance is then monitored and optimized over time.</p></details><details><summary>Can I start with a one-time project before monthly management?</summary><p>Yes. Brand &amp; Social Reset or Growth Foundation are good options if you are not ready for ongoing management.</p></details><details><summary>Do you offer custom packages?</summary><p>Yes. Businesses with larger content needs, multiple locations, paid campaigns or broader marketing support can receive a custom proposal.</p></details></div></section>
 <!-- CTA -->
 <section class="cta-section">
   <div class="section-label">Get Started</div>
@@ -802,7 +729,7 @@ a:focus-visible, summary:focus-visible, button:focus-visible { outline:3px solid
   <div class="footer-tagline">Strategy that moves you forward.</div>
   <ul class="footer-links">
     <li><a href="https://www.linkedin.com/in/miriamotano/" target="_blank">LinkedIn</a></li>
-    <li><a href="consulting.html">Consulting</a></li>
+    <li><a href="#faq">FAQ</a></li>
     <li><a href="#packages">Packages</a></li>
   </ul>
 </footer>
